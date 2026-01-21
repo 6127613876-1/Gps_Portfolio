@@ -1,7 +1,29 @@
 import { motion } from 'framer-motion';
 import { User, Code, GraduationCap } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const AboutSection = () => {
+  const certImages = [
+    '/Cert/cloud developing badge.png',
+    '/Cert/cloud practitioner badge.png',
+    '/Cert/cloud-foundations badge.png',
+    '/Cert/Data engineering badge.png',
+    '/Cert/DE Associate - badge.png',
+    '/Cert/winners_cert_JPEG_winner_certificate_144.jpg'
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === certImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Change image every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
     { label: "Internships", value: "3" },
     { label: "Projects", value: "8" },
@@ -109,8 +131,17 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-100 to-red-100 p-8 flex items-center justify-center shadow-lg">
-              <div className="w-full h-full rounded-xl bg-white/50 backdrop-blur-md flex items-center justify-center">
-                <img src='/Cert/cert.jpg' className='w-full h-full'/>
+              <div className="w-full h-full rounded-xl bg-white/50 backdrop-blur-md flex items-center justify-center overflow-hidden">
+                <motion.img 
+                  key={currentImageIndex}
+                  src={certImages[currentImageIndex]} 
+                  className='w-full h-full object-contain'
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5 }}
+                  alt={`Certificate ${currentImageIndex + 1}`}
+                />
               </div>
             </div>
           </motion.div>
