@@ -6,13 +6,23 @@ import {
   FaPython,
   FaGitAlt,
   FaFigma,
+  FaJava,
+  FaPhp,
+  FaCloud,
 } from 'react-icons/fa';
+import { FaObjectGroup } from 'react-icons/fa6';
 import {
   SiTailwindcss,
   SiFirebase,
   SiMysql,
   SiAdobephotoshop,
   SiMongodb,
+  SiHtml5,
+  SiFastapi,
+  SiPhp,
+  SiPostman,
+  SiPostgresql,
+  SiAdobelightroom,
 } from 'react-icons/si';
 
 const SkillsSection = () => {
@@ -26,20 +36,28 @@ const SkillsSection = () => {
       { name: 'React', icon: <FaReact /> },
       { name: 'JavaScript', icon: <FaJsSquare /> },
       { name: 'TailwindCSS', icon: <SiTailwindcss /> },
+      { name: 'HTML & CSS', icon: <SiHtml5 /> },
     ],
     Backend: [
       { name: 'Node.js', icon: <FaNodeJs /> },
       { name: 'Python', icon: <FaPython /> },
+      { name: 'Java', icon: <FaJava /> },
+      { name: 'Fast Api', icon: <SiFastapi /> },
+      { name: 'Php', icon: <SiPhp /> },
+      {name:'Cloud Computing', icon:<FaCloud />}
     ],
     DBMS: [
       { name: 'Firebase', icon: <SiFirebase /> },
       { name: 'MySQL', icon: <SiMysql /> },
       { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'Postgresql', icon: <SiPostgresql /> },
     ],
     'Other Skills': [
       { name: 'Git', icon: <FaGitAlt /> },
+      { name: 'Postman', icon: <SiPostman /> },
       { name: 'Figma', icon: <FaFigma /> },
-      { name: 'Photoshop', icon: <SiAdobephotoshop /> },
+      { name: 'Adobe Photoshop', icon: <SiAdobephotoshop /> },
+      { name: 'Adobe Lightroom', icon: <SiAdobelightroom /> }
     ],
   };
 
@@ -76,7 +94,7 @@ const SkillsSection = () => {
                       transition={{ duration: 0.3, delay: i * 0.1 }}
                       className="flex items-center gap-2 text-white px-5 py-2 bg-red-400 rounded-full text-sm bg-gradient-to-r  hover:scale-105 transition-transform shadow-sm"
                     >
-                      <span className="text-lg">{skill.icon}</span>
+                      <span className="text-xl">{skill.icon}</span>
                       <span>{skill.name}</span>
                     </motion.div>
                   ))}

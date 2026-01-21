@@ -110,7 +110,7 @@ const AboutSection = () => {
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-100 to-red-100 p-8 flex items-center justify-center shadow-lg">
               <div className="w-full h-full rounded-xl bg-white/50 backdrop-blur-md flex items-center justify-center">
-                <Code size={120} className="text-pink-400" />
+                <img src='/Cert/cert.jpg' className='w-full h-full'/>
               </div>
             </div>
           </motion.div>

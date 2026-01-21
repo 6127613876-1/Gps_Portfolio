@@ -56,7 +56,7 @@ const ExperienceSection = () => {
                 {experience.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="inline-flex items-center rounded-full bg-rose-600 text-white px-3 py-1 text-sm font-medium shadow-sm hover:bg-rose-700 transition"
+                    className="inline-flex items-center rounded-full bg-rose-400 text-white px-3 py-1 text-md font-medium shadow-sm transition"
                   >
                     {tech}
                   </span>
